@@ -1,5 +1,7 @@
+import json
 import socket
 from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
 from handler import lambda_handler
 from zeroconf import ServiceInfo, Zeroconf
 
@@ -44,14 +46,27 @@ def shutdown_event():
 
 @app.post("/{path:path}")
 async def handle_all(path: str, request: Request):
-    body = await request.body()
+    raw_body = await request.body()
+    try:
+        body_text = raw_body.decode("utf-8")
+    except UnicodeDecodeError:
+        return JSONResponse(status_code=400, content={"ok": False, "motiv": "corpul cererii nu e UTF-8 valid"})
+
     event = {
         "rawPath": "/" + path,
         "requestContext": {"http": {"method": "POST"}},
-        "body": body.decode("utf-8")
+        "body": body_text
     }
     context = {}
-    return lambda_handler(event, context)
+    result = lambda_handler(event, context)
+    # lambda_handler întoarce mereu {statusCode, body} — body-ul e string JSON, cum îl vrea
+    # Lambda/API Gateway. Local păstrăm statusCode-ul real, ca fetch()-ul din mobil să vadă
+    # aceleași coduri (400/500) ca în producție, nu 200 mereu.
+    try:
+        content = json.loads(result["body"])
+    except Exception:
+        content = {"ok": False, "motiv": "răspuns intern nevalid"}
+    return JSONResponse(status_code=result.get("statusCode", 500), content=content)
 
 if __name__ == "__main__":
     import uvicorn
