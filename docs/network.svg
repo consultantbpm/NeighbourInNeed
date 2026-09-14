@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="1600" height="900" fill="#0f172a"/>
+  <text x="800" y="60" text-anchor="middle" font-size="40" font-weight="700" fill="#ffffff">The neighbourhood network, with the AI dispatcher in the centre</text>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/></marker>
+    <radialGradient id="g"><stop offset="0" stop-color="#34d399"/><stop offset="1" stop-color="#059669"/></radialGradient>
+  </defs>
+
+  <!-- centre: dispatcher -->
+  <circle cx="800" cy="470" r="150" fill="url(#g)" stroke="#a7f3d0" stroke-width="4"/>
+  <text x="800" y="440" text-anchor="middle" font-size="34" font-weight="700" fill="#022c22">AI dispatcher</text>
+  <text x="800" y="480" text-anchor="middle" font-size="20" fill="#064e3b">Strands Agents SDK · Bedrock</text>
+  <text x="800" y="510" text-anchor="middle" font-size="18" fill="#064e3b">who is close · who is free · who can help</text>
+  <text x="800" y="540" text-anchor="middle" font-size="18" fill="#064e3b">ticket · history · group notified</text>
+
+  <!-- people who need help (left) -->
+  <g>
+    <circle cx="230" cy="250" r="70" fill="#1e293b" stroke="#fbbf24" stroke-width="4"/>
+    <text x="230" y="240" text-anchor="middle" font-size="44">🧓</text>
+    <text x="230" y="285" text-anchor="middle" font-size="18" fill="#fde68a">watch · SOS button</text>
+    <text x="230" y="350" text-anchor="middle" font-size="22" fill="#e2e8f0">Elderly person, alone at home</text>
+
+    <circle cx="230" cy="620" r="70" fill="#1e293b" stroke="#fbbf24" stroke-width="4"/>
+    <text x="230" y="610" text-anchor="middle" font-size="44">♿</text>
+    <text x="230" y="655" text-anchor="middle" font-size="18" fill="#fde68a">phone · voice or button</text>
+    <text x="230" y="720" text-anchor="middle" font-size="22" fill="#e2e8f0">Person with a disability</text>
+  </g>
+
+  <!-- responders (right) -->
+  <g>
+    <circle cx="1370" cy="200" r="64" fill="#1e293b" stroke="#60a5fa" stroke-width="4"/>
+    <text x="1370" y="212" text-anchor="middle" font-size="42">🚗</text>
+    <text x="1370" y="295" text-anchor="middle" font-size="22" fill="#e2e8f0">Neighbour with a car</text>
+
+    <circle cx="1370" cy="470" r="64" fill="#1e293b" stroke="#60a5fa" stroke-width="4"/>
+    <text x="1370" y="482" text-anchor="middle" font-size="42">🩺</text>
+    <text x="1370" y="565" text-anchor="middle" font-size="22" fill="#e2e8f0">Relative who is a nurse</text>
+
+    <circle cx="1370" cy="740" r="64" fill="#1e293b" stroke="#60a5fa" stroke-width="4"/>
+    <text x="1370" y="752" text-anchor="middle" font-size="42">🙋</text>
+    <text x="1370" y="835" text-anchor="middle" font-size="22" fill="#e2e8f0">Volunteer from the block</text>
+  </g>
+
+  <!-- group data (bottom) -->
+  <rect x="640" y="760" width="320" height="90" rx="14" fill="#1e293b" stroke="#fb923c" stroke-width="3"/>
+  <text x="800" y="797" text-anchor="middle" font-size="22" font-weight="600" fill="#fdba74">Care group · Firebase</text>
+  <text x="800" y="828" text-anchor="middle" font-size="17" fill="#e2e8f0">members · availability · tickets</text>
+
+  <!-- links -->
+  <line x1="300" y1="260" x2="660" y2="410" stroke="#94a3b8" stroke-width="3" marker-end="url(#ar)"/>
+  <text x="470" y="315" text-anchor="middle" font-size="17" fill="#cbd5e1">SOS + location</text>
+  <line x1="300" y1="610" x2="660" y2="520" stroke="#94a3b8" stroke-width="3" marker-end="url(#ar)"/>
+  <text x="470" y="590" text-anchor="middle" font-size="17" fill="#cbd5e1">SOS + location</text>
+
+  <line x1="940" y1="410" x2="1305" y2="230" stroke="#60a5fa" stroke-width="3" stroke-dasharray="8,6" marker-end="url(#ar)"/>
+  <line x1="950" y1="470" x2="1305" y2="470" stroke="#60a5fa" stroke-width="5" marker-end="url(#ar)"/>
+  <text x="1120" y="455" text-anchor="middle" font-size="18" fill="#bfdbfe">picked: closest, has the skill</text>
+  <line x1="940" y1="530" x2="1305" y2="720" stroke="#60a5fa" stroke-width="3" stroke-dasharray="8,6" marker-end="url(#ar)"/>
+  <text x="1140" y="640" text-anchor="middle" font-size="17" fill="#bfdbfe">group notified</text>
+
+  <line x1="800" y1="620" x2="800" y2="758" stroke="#fb923c" stroke-width="3" marker-end="url(#ar)"/>
+
+  <text x="800" y="885" text-anchor="middle" font-size="16" fill="#94a3b8">Every step is written on the ticket. If nobody is available, the whole group is alerted and the ticket is marked uncovered.</text>
+</svg>

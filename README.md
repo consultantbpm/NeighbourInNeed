@@ -35,7 +35,10 @@ are not, and they fall through the cracks.
                                                                      update_ticket, notify_group
 ```
 
-- `mobile/` — React Native app: alert routing (`AlertRoutingService.js`), Wear OS bridge
+- **Phone and watch apps (Kotlin, Android / Wear OS)** — the apps used in the demo live in their own repo:
+  https://github.com/consultantbpm/SAVE_ME_BUTTON (MIT). Modules `phone/`, `wear/`, `shared/`; the SOS press
+  sends the alert to `/sos` (`PhoneTelephony.kt`, `RemoteSosBridge.kt`, `DispatcherConfig.kt`).
+- `mobile/` — React Native routing layer: alert routing (`AlertRoutingService.js`), Wear OS bridge
   (`WearDataLayerService.js`), SMS fallback (`SmsFallbackService.js`), Firebase config and data model.
 - `backend_python/dispatcher.py` — the SOS dispatcher agent (Strands `Agent` + `@tool` functions, Bedrock model).
 - `backend_python/meds.py` — the medication-assistant agent.
